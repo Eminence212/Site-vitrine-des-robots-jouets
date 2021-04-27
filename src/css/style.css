@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'SEGA LOGO FONT';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SEGA LOGO FONT'), url('SEGA.woff') format('woff');
+    }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #00767c;
+    background: linear-gradient(to right,#00767c, #110055);
+}
+.title{
+    font-family: 'SEGA LOGO FONT';
+    font-weight: 200;
+    color: #0ccac4;
+    font-size: 3rem;
+    margin: .67em 0;
+    text-align: center;
+    line-height: 1.15;
+}
+.search{
+    padding: 1rem;
+    background-color: #cdecff;
+    border: 1px solid #19a974;
+    outline-offset: -2px;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+}
+.card-list{
+    position: relative;
+}
+.bg-green{
+    cursor: pointer;
+    border-radius: .5rem;
+    font-family: sans-serif;
+    line-height: 1.15;
+    background-color: #9eebcf;
+    padding: 1rem;
+    transition: transform .25s ease-out;
+}
+.bg-green:hover{
+    transform: scale(1.05);
+    object-fit: cover;
+    text-align: center;
+}
+.img{
+    max-width: 100%;
+    border-style: none;
+    height: 200px;
+    width: 200px;
+}
+h5,p{
+    font-size: 1rem;
+    line-height: 1;
+}
+@keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+.loader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #00767c;
+}
+
+  .loader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #00767c;
+    border-top-color: #19a974;
+    border-bottom-color: #19a974;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: animate-preloader 1s linear infinite;
+  }
+  .modal-dialog{
+      width: 300px;
+      height: 600px;
+  }
+  .modal-bg-green{
+    cursor: pointer;
+    font-family: sans-serif;
+    line-height: 1.15;
+    background-color: #9eebcf;
+    padding: 1rem;
+    object-fit: cover;
+    text-align: center;
+    transition: transform .25s ease-out;
+}
+button{
+    background-color: #00767c !important;
+}
