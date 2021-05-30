@@ -7,7 +7,7 @@ import './css/style.css'
 const App = () => {
   const [Robots, setRobots] = useState([])
   const [listRobots, setListobots] = useState([])
-
+  const [isLoading, setIsLoading] = useState(true);
   //Chargement de donnée depuis l'API;
   let image = 'https://robohash.org/'
   let requete = "https://jsonplaceholder.typicode.com/users";
@@ -23,8 +23,12 @@ const App = () => {
                   id: user.id,
                   name: user.name,
                   email: user.email,
-                  image: image + user.id
-                }
+                  image: image + user.id,
+                  address: user.address,
+                  phone: user.phone,
+                  website: user.website,
+                  company : user.company
+                };
               })
               setRobots(newRobots)
               setListobots(newRobots)
@@ -38,6 +42,7 @@ const App = () => {
     try {
       let valeur = input.target.value.toLowerCase()
       findRobots(valeur)
+      setIsLoading(false)
     } catch (error) {
       console.log(error);
     }
@@ -59,9 +64,9 @@ const App = () => {
     <div className="container container-fluid">
       <Title />
       <Searchbox onChange={handleChange} />
-      <CardList listRobots={listRobots} />
+      <CardList listRobots={listRobots} isLoading={isLoading} />
     </div>
-  )
+  );
 }
 
 export default App;

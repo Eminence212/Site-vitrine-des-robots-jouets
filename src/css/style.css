@@ -107,3 +107,10 @@ h5,p{
 button{
     background-color: #00767c !important;
 }
+.information{
+   margin-top: 15px;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
